@@ -1,7 +1,10 @@
 package app;
 
 import repository.ClienteRepository;
+<<<<<<< HEAD
 import repository.IClienteRepository;
+=======
+>>>>>>> 51ed15203f93dfcd75e7c0674637340eaff84fe2
 import repository.ProductoRepository;
 import repository.VentaRepository;
 import service.ClienteService;
@@ -13,6 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+<<<<<<< HEAD
         // llamada a los metodos de constructor
         IClienteRepository clienteRepository = new ClienteRepository();
         ClienteService clienteService = new ClienteService(clienteRepository);
@@ -21,6 +25,13 @@ public class Main {
         VentaRepository ventaRepository = new VentaRepository();
 
     
+=======
+        ClienteRepository clienteRepository = new ClienteRepository();
+        ProductoRepository productoRepository = new ProductoRepository();
+        VentaRepository ventaRepository = new VentaRepository();
+
+        ClienteService clienteService = new ClienteService(clienteRepository);
+>>>>>>> 51ed15203f93dfcd75e7c0674637340eaff84fe2
         ProductoService productoService = new ProductoService(productoRepository);
         VentaService ventaService = new VentaService(clienteService, productoService, ventaRepository);
         ReporteService reporteService = new ReporteService(ventaRepository);
