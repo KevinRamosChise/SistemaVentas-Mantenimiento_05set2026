@@ -1,6 +1,7 @@
 package app;
 
 import repository.ClienteRepository;
+import repository.IClienteRepository;
 import repository.ProductoRepository;
 import repository.VentaRepository;
 import service.ClienteService;
@@ -12,8 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //llamada a los metodos de constructor
-        ClienteRepository clienteRepository = new ClienteRepository();
+        // llamada a los metodos de constructor
+        IClienteRepository clienteRepository = new ClienteRepository();
         ClienteService clienteService = new ClienteService(clienteRepository);
 
         ProductoRepository productoRepository = new ProductoRepository();

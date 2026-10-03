@@ -12,11 +12,13 @@ public class ClienteRepository implements IClienteRepository {
         this.clientes = new ArrayList<>();
     }
 
+    @Override
     public void guardar(Cliente cliente) {
         clientes.add(cliente);
     }
 
     // BUG intencional: comparación de DNI con == en vez de equals
+    @Override
     public Cliente buscarPorDni(String dni) {
         for (Cliente c : clientes) {
             if (c.getDni() == dni) {
@@ -26,6 +28,7 @@ public class ClienteRepository implements IClienteRepository {
         return null;
     }
 
+    @Override
     public List<Cliente> listar() {
         return clientes;
     }
