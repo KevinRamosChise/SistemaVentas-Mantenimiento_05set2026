@@ -38,6 +38,11 @@ public class VentaService {
     // Code smell: repetición de mensajes y validaciones
     public void agregarProductoVenta(int idProducto, int cantidad) {
 
+        if (cantidad <= 0) {
+            System.out.println("ERROR: cantidad inválida");
+            return;
+        }
+
         if (ventaActual == null) {
             Console.error("No hay venta activa");
             return;
