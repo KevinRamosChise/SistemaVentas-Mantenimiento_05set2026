@@ -14,11 +14,11 @@ public class ClienteService {
         this.clienteRepo = repo;
     }
 
-    // BUG intencional: validarDni está mal en util.Validaciones
+    // Bug corregido: DNI obligatorio y de 8 dígitos numéricos
     public void registrarCliente(String dni, String nombre, String tipo) {
 
-        if (!Validaciones.validarDni(dni)) {
-            Console.error("DNI inválido");
+        if (dni == null || !dni.matches("\\d{8}")) {
+            System.out.println("ERROR: Cliente inválido");
             return;
         }
 
